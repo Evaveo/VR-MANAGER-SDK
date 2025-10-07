@@ -1,0 +1,34 @@
+{
+  "name": "com.evaveo.vr_manager_sdk",
+  "version": "1.0.0",
+  "displayName": "EVAVEO VR Manager SDK",
+  "description": "Official SDK for integrating EVAVEO VR Manager analytics and telemetry into Unity VR applications. Track sessions, performance, crashes, and custom events.",
+  "unity": "2020.3",
+  "keywords": [
+    "vr",
+    "analytics",
+    "telemetry",
+    "performance",
+    "tracking",
+    "evaveo",
+    "vrmanager"
+  ],
+  "author": {
+    "name": "EVAVEO",
+    "email": "support@evaveo.com",
+    "url": "https://evaveo.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Evaveo/VR-MANAGER-SDK-.git"
+  },
+  "license": "MIT",
+  "dependencies": {},
+  "samples": [
+    {
+      "displayName": "Simple VR Game Example",
+      "description": "Basic VR game demonstrating SDK integration",
+      "path": "Samples~/SimpleVRGame"
+    }
+  ]
+}
