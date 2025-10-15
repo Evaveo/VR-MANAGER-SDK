@@ -6,9 +6,9 @@ namespace EVAVEO_VR_Manager_SDK
     /// <summary>
     /// Main SDK class for EVAVEO VR Manager analytics integration
     /// </summary>
-    public class EvaveoSDK : MonoBehaviour
+    public class EVAVEO_VR_Manager : MonoBehaviour
     {
-        private static EvaveoSDK instance;
+        private static EVAVEO_VR_Manager instance;
         private static string apiKey;
         private static string apiUrl = "https://api.vrmanager.evaveo.com/api/tracking";
         private static bool isEnabled = true;
@@ -39,8 +39,8 @@ namespace EVAVEO_VR_Manager_SDK
             apiKey = key;
 
             // Create SDK GameObject
-            GameObject sdkObject = new GameObject("EvaveoSDK");
-            instance = sdkObject.AddComponent<EvaveoSDK>();
+            GameObject sdkObject = new GameObject("EVAVEO_VR_Manager");
+            instance = sdkObject.AddComponent<EVAVEO_VR_Manager>();
             DontDestroyOnLoad(sdkObject);
 
             Debug.Log("[EVAVEO VR Manager] SDK Initialized successfully");

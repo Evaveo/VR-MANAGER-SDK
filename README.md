@@ -40,7 +40,7 @@ This SDK allows VR app developers to integrate telemetry and analytics into thei
    using EVAVEO_VR_Manager_SDK;
    
    void Start() {
-       EvaveoSDK.Initialize("your_api_key_here");
+       EVAVEO_VR_Manager.Initialize("your_api_key_here");
    }
    ```
 
@@ -53,15 +53,15 @@ This SDK allows VR app developers to integrate telemetry and analytics into thei
    git clone https://github.com/Evaveo/VR-MANAGER-SDK-.git
    ```
 
-2. **Copy the `Unreal/Plugins/EvaveoSDK` folder to your project's `Plugins` directory**
+2. **Copy the `Unreal/Plugins/EVAVEO_VR_Manager` folder to your project's `Plugins` directory**
 
 3. **Initialize in your GameMode or PlayerController**
    ```cpp
-   #include "EvaveoSDK.h"
+   #include "EVAVEO_VR_Manager.h"
    
    void AMyGameMode::BeginPlay() {
        Super::BeginPlay();
-       UEvaveoSDK::Initialize("your_api_key_here");
+       UEVAVEO_VR_Manager::Initialize("your_api_key_here");
    }
    ```
 
@@ -100,7 +100,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         // Initialize SDK with your API key
-        EvaveoSDK.Initialize("vr_your_api_key_here");
+        EVAVEO_VR_Manager.Initialize("vr_your_api_key_here");
         
         // SDK now automatically tracks:
         // - App launches
@@ -112,7 +112,7 @@ public class GameManager : MonoBehaviour
     // Optional: Track custom events
     void OnLevelComplete()
     {
-        EvaveoSDK.TrackEvent("level_complete", "level_5");
+        EVAVEO_VR_Manager.TrackEvent("level_complete", "level_5");
     }
 }
 ```
@@ -131,7 +131,7 @@ EvaveoConfig config = new EvaveoConfig
     SendInterval = 5.0f // Send data every 5 seconds
 };
 
-EvaveoSDK.Initialize(config);
+EVAVEO_VR_Manager.Initialize(config);
 ```
 
 ### Unreal Integration
@@ -139,7 +139,7 @@ EvaveoSDK.Initialize(config);
 #### Installation
 
 1. Clone or download this repository
-2. Copy `Unreal/Plugins/EvaveoSDK` to your project's `Plugins` folder
+2. Copy `Unreal/Plugins/EVAVEO_VR_Manager` to your project's `Plugins` folder
 3. Restart Unreal Editor
 4. Enable the plugin: `Edit` → `Plugins` → Search "Evaveo" → Enable
 
@@ -147,7 +147,7 @@ EvaveoSDK.Initialize(config);
 
 ```cpp
 // MyGameMode.h
-#include "EvaveoSDK.h"
+#include "EVAVEO_VR_Manager.h"
 
 UCLASS()
 class AMyGameMode : public AGameModeBase
@@ -164,13 +164,13 @@ void AMyGameMode::BeginPlay()
     Super::BeginPlay();
     
     // Initialize SDK
-    UEvaveoSDK::Initialize(TEXT("vr_your_api_key_here"));
+    UEVAVEO_VR_Manager::Initialize(TEXT("vr_your_api_key_here"));
 }
 
 // Track custom events
 void AMyPlayerController::OnLevelComplete()
 {
-    UEvaveoSDK::TrackEvent(TEXT("level_complete"), TEXT("level_5"));
+    UEVAVEO_VR_Manager::TrackEvent(TEXT("level_complete"), TEXT("level_5"));
 }
 ```
 
@@ -206,16 +206,16 @@ Track your own events:
 
 ```csharp
 // Unity
-EvaveoSDK.TrackEvent("button_clicked", "main_menu");
-EvaveoSDK.TrackEvent("purchase_made", "sword_legendary");
-EvaveoSDK.TrackEvent("tutorial_completed", "step_3");
+EVAVEO_VR_Manager.TrackEvent("button_clicked", "main_menu");
+EVAVEO_VR_Manager.TrackEvent("purchase_made", "sword_legendary");
+EVAVEO_VR_Manager.TrackEvent("tutorial_completed", "step_3");
 ```
 
 ```cpp
 // Unreal
-UEvaveoSDK::TrackEvent(TEXT("button_clicked"), TEXT("main_menu"));
-UEvaveoSDK::TrackEvent(TEXT("purchase_made"), TEXT("sword_legendary"));
-UEvaveoSDK::TrackEvent(TEXT("tutorial_completed"), TEXT("step_3"));
+UEVAVEO_VR_Manager::TrackEvent(TEXT("button_clicked"), TEXT("main_menu"));
+UEVAVEO_VR_Manager::TrackEvent(TEXT("purchase_made"), TEXT("sword_legendary"));
+UEVAVEO_VR_Manager::TrackEvent(TEXT("tutorial_completed"), TEXT("step_3"));
 ```
 
 ## 🔒 Privacy & Security
@@ -232,14 +232,14 @@ Allow users to disable analytics:
 
 ```csharp
 // Unity
-EvaveoSDK.SetEnabled(false); // Disable tracking
-EvaveoSDK.SetEnabled(true);  // Re-enable tracking
+EVAVEO_VR_Manager.SetEnabled(false); // Disable tracking
+EVAVEO_VR_Manager.SetEnabled(true);  // Re-enable tracking
 ```
 
 ```cpp
 // Unreal
-UEvaveoSDK::SetEnabled(false); // Disable tracking
-UEvaveoSDK::SetEnabled(true);  // Re-enable tracking
+UEVAVEO_VR_Manager::SetEnabled(false); // Disable tracking
+UEVAVEO_VR_Manager::SetEnabled(true);  // Re-enable tracking
 ```
 
 ## 📈 Viewing Analytics
@@ -259,33 +259,33 @@ Once integrated, view your app's analytics at:
 
 ### Unity API
 
-#### `EvaveoSDK.Initialize(string apiKey)`
+#### `EVAVEO_VR_Manager.Initialize(string apiKey)`
 Initialize the SDK with your API key.
 
-#### `EvaveoSDK.Initialize(EvaveoConfig config)`
+#### `EVAVEO_VR_Manager.Initialize(EvaveoConfig config)`
 Initialize with custom configuration.
 
-#### `EvaveoSDK.TrackEvent(string eventName, string eventData = null)`
+#### `EVAVEO_VR_Manager.TrackEvent(string eventName, string eventData = null)`
 Track a custom event.
 
-#### `EvaveoSDK.SetEnabled(bool enabled)`
+#### `EVAVEO_VR_Manager.SetEnabled(bool enabled)`
 Enable or disable tracking.
 
-#### `EvaveoSDK.SetUserId(string userId)`
+#### `EVAVEO_VR_Manager.SetUserId(string userId)`
 Set a custom user identifier.
 
 ### Unreal API
 
-#### `UEvaveoSDK::Initialize(FString ApiKey)`
+#### `UEVAVEO_VR_Manager::Initialize(FString ApiKey)`
 Initialize the SDK with your API key.
 
-#### `UEvaveoSDK::TrackEvent(FString EventName, FString EventData)`
+#### `UEVAVEO_VR_Manager::TrackEvent(FString EventName, FString EventData)`
 Track a custom event.
 
-#### `UEvaveoSDK::SetEnabled(bool bEnabled)`
+#### `UEVAVEO_VR_Manager::SetEnabled(bool bEnabled)`
 Enable or disable tracking.
 
-#### `UEvaveoSDK::SetUserId(FString UserId)`
+#### `UEVAVEO_VR_Manager::SetUserId(FString UserId)`
 Set a custom user identifier.
 
 ## 🐛 Troubleshooting
@@ -304,7 +304,7 @@ Set a custom user identifier.
 EvaveoConfig config = new EvaveoConfig {
     EnableDebugLogs = true
 };
-EvaveoSDK.Initialize(config);
+EVAVEO_VR_Manager.Initialize(config);
 
 // Check Unity Console for "[EVAVEO VR Manager]" messages
 ```
